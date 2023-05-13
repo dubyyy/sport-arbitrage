@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>h</title>
+  <link rel="stylesheet" href="Arbitrage.css" />
+</head>
+<body>
+ <div class="container">
+    <div class="left">
+          <div class="div-wrapper">
+            <input id="Stake">
+            <label>Stake</label>
+          </div>
+      
+        
+     <div class="div-wrapper">
+        <input id="Odd1">
+        <label>Bet1</label>
+      </div>
+     
+      <div class="div-wrapper">
+        <input id="Odd2">
+        <label>Bet1</label>
+      </div>
+      
+     <div class="div-wrapper">
+        <input id="Odd3">
+        <label>Bet1</label>
+      </div>
+
+       <button onclick={f()}>CALCULATE</button>
+  </div>
+    
+  <div class="middle">
+     <span>Stake</span>
+     <div id="stakeOfOddOne"> </div>
+     <div id="stakeOfOddTwo"></div>
+     <div id="stakeOfOddThree"></div>
+  </div>
+
+  <div class="right">
+              <span>Payout</span>
+              <div id="PayoutOfOddOne"></div>
+              <div id="PayoutOfOddTwo"></div>
+              <div id="PayoutOfOddThree"></div>
+           </div>
+          
+
+</div>
+
+  <script>
+               function f(){
+   let Stake=document.getElementById("Stake");
+let StakeReal=parseInt(Stake.value);
+
+
+   let firstOdd=document.getElementById("Odd1");
+let firstOddReal=parseFloat(1/firstOdd.value);
+ 
+
+let secondOdd=document.getElementById("Odd2");
+let secondOddReal=parseFloat(1/secondOdd.value);
+
+
+let thirdOdd=document.getElementById("Odd3");
+let thirdOddReal=parseFloat(1/thirdOdd.value);
+
+
+let firstOddBetpercentage=firstOddReal*100;
+
+let secondOddBetpercentage=secondOddReal*100;
+
+let thirdOddBetpercentage=thirdOddReal*100;
+
+
+let Totalpercentage=(firstOddReal*100)+(secondOddReal*100)+(thirdOddReal*100);
+
+
+let firstOddstake=(StakeReal*firstOddBetpercentage)/Totalpercentage;
+
+
+let secondOddstake=(StakeReal*secondOddBetpercentage)/Totalpercentage;
+
+
+let thirdOddstake=(StakeReal*thirdOddBetpercentage)/Totalpercentage;
+
+let stakeOfOddOne=document.getElementById('stakeOfOddOne');
+
+let stakeOfOddTwo=document.getElementById('stakeOfOddTwo');
+
+let stakeOfOddThree=document.getElementById('stakeOfOddThree');
+
+let PayoutOfOddOne=document.getElementById('PayoutOfOddOne');
+
+let PayoutOfOddTwo=document.getElementById('PayoutOfOddTwo');
+
+let PayoutOfOddThree=document.getElementById('PayoutOfOddThree');
+
+if((firstOddReal*100)+(secondOddReal*100)+(thirdOddReal*100)>100){
+   
+    document.write("This is not an arbitrage opputnity");
+  
+
+}else{
+              stakeOfOddOne.innerHTML='$'+firstOddstake;
+              stakeOfOddTwo.innerHTML='$'+secondOddstake;
+              stakeOfOddThree.innerHTML='$' +thirdOddstake;
+
+              PayoutOfOddOne.innerHTML='$'+firstOddstake*parseFloat(firstOdd.value);
+              PayoutOfOddTwo.innerHTML='$'+secondOddstake*parseFloat(secondOdd.value);
+              PayoutOfOddThree.innerHTML='$'+thirdOddstake*parseFloat(thirdOdd.value);
+    //document.write("The stake for odd1 is  "+firstOddstake + " " +"The stake for odd2 is  "+ secondOddstake + "The stake for odd3 is" + thirdOddstake);
+}
+               }
+
+
+
+
+  </script>
+</body>
+</html>

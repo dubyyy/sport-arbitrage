@@ -1,0 +1,135 @@
+body{
+              background: linear-gradient(90deg,rgb(235, 229, 229),rgb(158, 158, 178));
+              padding: 4rem;
+}
+
+.container{
+             padding: 4rem;
+             display: flex;
+             gap: 2rem;
+             position: relative;
+             background-color: white;
+             
+             
+}
+.left{
+              flex: 3;
+}
+
+.left button{
+            height: 3rem;
+            width: 10rem;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            margin-left: 10%;
+ }
+.div-wrapper{
+              height: 40px;
+              background-color: #fff;
+              padding: 30px;
+              position: relative;
+}
+.div-wrapper input{
+              
+              border:none;
+              font-size: 17px;
+              border-bottom: 2px solid silver;
+
+}
+.div-wrapper label{
+              position: absolute;
+              bottom: 3rem;
+              left: 2rem;
+              color: grey;
+              pointer-events: none;
+              transition: all 0.3s ease-in;
+
+}
+
+
+.div-wrapper input:focus ~ label,
+.div-wrapper input:valid ~ label
+{
+              transform: translateY(-20px);
+              font-size: 15px;
+              color: #4158d0;
+}
+.div-wrapper input:focus{
+              border:none;    
+              border-bottom: 2px solid silver;
+}
+
+
+.middle{
+             
+              background-color: white;
+              flex: 1;
+              height: 18rem;
+
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap:1.5rem;
+              
+              
+}
+.middle span{
+              color: #4158d0;
+              margin-top: 1rem;
+             font-size: 1.3rem;
+           
+}
+.middle div{
+              height: 3rem;
+              width: 70%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #f2eeee;
+              border-radius: 10px;
+}
+.right{
+             
+              background-color: white;
+              flex: 1;
+              height: 18rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap:1.5rem;
+              
+}
+.right span{
+              color: #4158d0;
+              margin-top: 1rem;
+             font-size: 1.3rem;
+           
+}
+.right div{
+              height: 3rem;
+              width: 70%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #f2eeee;
+              border-radius: 10px;
+}
+@media (max-width: 500px){
+              .container{
+                            padding: 1rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1rem;
+                            position: relative;
+                            
+                            background-color: white;
+                            
+               }
+
+               .left{
+                            flex: 3;
+              }
+              
+             
+}
